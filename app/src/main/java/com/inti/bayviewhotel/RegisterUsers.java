@@ -1,6 +1,7 @@
 package com.inti.bayviewhotel;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
 public class RegisterUsers extends AppCompatActivity {
