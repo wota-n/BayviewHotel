@@ -98,5 +98,7 @@ public class RegisterUsers extends AppCompatActivity implements View.OnClickList
             editTextPassword.requestFocus();
             return;
         }
+
+
     }
 }
