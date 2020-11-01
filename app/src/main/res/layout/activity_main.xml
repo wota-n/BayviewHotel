@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
         android:visibility="gone"
-        tools:ignore="MisisngConstraints"
+        tools:ignore="MissingConstraints"
 
         app:layout_constraintBottom_toBottomOf="@+id/forgotPassword"
         app:layout_constraintEnd_toEndOf="parent"

@@ -34,7 +34,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/banner"
-        app:layout_constraintVertical_bias="0.776" />
+        app:layout_constraintVertical_bias="0.867" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -57,8 +57,10 @@
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/editTextPosition"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705" />
 
     <EditText
         android:id="@+id/editTextPosition"
@@ -73,10 +75,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/register"
         android:layout_width="308dp"
         android:layout_height="50dp"
-        android:text="Login"
+        android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +100,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
         android:visibility="gone"
-        tools:ignore="MisisngConstraints"
+        tools:ignore="MissingConstraints"
 
         app:layout_constraintBottom_toBottomOf="@+id/forgotPassword"
         app:layout_constraintEnd_toEndOf="parent"
