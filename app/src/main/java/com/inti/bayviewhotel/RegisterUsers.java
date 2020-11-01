@@ -1,5 +1,6 @@
 package com.inti.bayviewhotel;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,6 +13,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterUsers extends AppCompatActivity implements View.OnClickListener{
@@ -58,10 +62,10 @@ public class RegisterUsers extends AppCompatActivity implements View.OnClickList
     }
 
     private void registerUser() {
-        String email = editTextEmailAddress.getText().toString().trim();
-        String fullName = editTextFullName.getText().toString().trim();
-        String position = editTextPosition.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+        final String email = editTextEmailAddress.getText().toString().trim();
+        final String fullName = editTextFullName.getText().toString().trim();
+        final String position = editTextPosition.getText().toString().trim();
+        final String password = editTextPassword.getText().toString().trim();
 
         if(email.isEmpty()){
             editTextEmailAddress.setError("Email is required!");
@@ -99,6 +103,15 @@ public class RegisterUsers extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-
+        progressBar.setVisibility(View.VISIBLE);
+        mAuth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        User user = new User(fullName, email, position);
+                    }
+                }
+            });
     }
 }
