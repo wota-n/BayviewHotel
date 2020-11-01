@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -88,12 +89,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         progressBar.setVisibility(View.VISIBLE);
+
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    //redirect to portal
-                    startActivity(new Intent(MainActivity.this, PortalActivity.class));
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                    if(user.isEmailVerified()) {
+                        //redirect to portal
+                        startActivity(new Intent(MainActivity.this, PortalActivity.class));
+                    }else{
+                        user.sendEmailVerification();
+                        Toast.makeText(MainActivity.this, "Check your email for account verification", Toast.LENGTH_LONG).show();
+                    }
+
+                    //startActivity(new Intent(MainActivity.this, PortalActivity.class)); Comment if else above to disable verification
+
                 }else{
                     Toast.makeText(MainActivity.this, "Failed to login. Please check you entered the correct values", Toast.LENGTH_LONG).show();
                 }
