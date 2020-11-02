@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@drawable/gradient"
 
 
     >
@@ -16,6 +17,7 @@
         android:layout_margin="50dp"
         android:layout_marginTop="52dp"
         android:text="Bayview Hotel"
+        android:textColor="#ffff"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -28,6 +30,7 @@
         android:layout_height="58dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:background="#11000000"
         app:layout_constraintBottom_toBottomOf="@+id/forgotPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -40,6 +43,7 @@
         android:layout_width="308dp"
         android:layout_height="58dp"
         android:hint="Password"
+        android:background="#11000000"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,10 +54,12 @@
 
     <Button
         android:id="@+id/login"
-        android:backgroundTint="@color/colorAccent"
         android:layout_width="308dp"
         android:layout_height="50dp"
+        android:background="@drawable/custom_rounded_corners"
+        android:backgroundTint="@color/colorAccent"
         android:text="Login"
+        android:textColor="#ffff"
         app:layout_constraintBottom_toTopOf="@+id/forgotPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -66,7 +72,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="548dp"
-        android:text="Forgot Password"
+        android:text="Reset Password"
+        android:textColor="@color/editText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/login"
         app:layout_constraintHorizontal_bias="0.502"
@@ -98,5 +105,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:srcCompat="@drawable/hotel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
