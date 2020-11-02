@@ -5,42 +5,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
+import android.widget.ImageView;
 
 
-public class KitchenPortal extends AppCompatActivity {
-    Button button1, button2;
+public class KitchenPortal extends AppCompatActivity implements View.OnClickListener{
+
+    ImageView additem, itemlist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen_portal);
 
-        button1 = (Button) findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                KitchenAddIngredient();
-            }
-        });
+        additem = (ImageView) findViewById(R.id.additem);
+        additem.setOnClickListener(this);
 
-        button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                KitchenIngredientList();
-            }
-        });
-
-    }
-    public void KitchenAddIngredient()
-    {
-        Intent intent = new Intent(this, KitchenAddItem.class);
-        startActivity(intent);
+        itemlist = (ImageView) findViewById(R.id.itemlist);
+        itemlist.setOnClickListener(this);
     }
 
-    public void KitchenIngredientList()
-    {
-        Intent intent = new Intent(this, KitchenItemList.class);
-        startActivity(intent);
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.additem:
+                startActivity(new Intent(this, KitchenAddItem.class));
+                break;
+
+            case R.id.itemlist:
+                startActivity(new Intent(this, KitchenItemList.class));
+
+                break;
+
+        }
     }
 
 }
