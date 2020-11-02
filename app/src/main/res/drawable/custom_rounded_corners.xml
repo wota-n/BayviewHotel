@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke
+        android:width="3dp"
+        android:color="#F00" />
+    <corners android:radius="40dp" />
+</shape>
+
+<!--Code from
+https://danielmalone.com/2019/10/24/android-studio-how-to-make-rounded-corners-on-a-button/
+-->
