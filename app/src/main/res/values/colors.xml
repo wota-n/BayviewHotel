@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#22ADEC</color>
     <color name="editText">#ffff</color>
+    <color name="colorPrimary2">#6200EE</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorPrimaryDark2">#3700B3</color>
+    <color name="colorAccent2">#03DAC5</color>
+    <color name="colorLightBlue">#87cefa</color>
+    <color name="colorWhite">#ffffff</color>
 </resources>

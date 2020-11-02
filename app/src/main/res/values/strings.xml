@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">BayviewHotel</string>
+    <string name="title_name">Welcome to Bayview Hotel</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="kitchencheckingredient">Kitchen: Check Item</string>
+    <string name="kitchenaddingredient">Kitchen: Add Item</string>
+    <string name="kitcheningredientlist">Kitchen: Item List</string>
+    <string name="button1">Add Item</string>
+    <string name="button2">Item List</string>
+
+
 </resources>

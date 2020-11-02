@@ -10,18 +10,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".KitchenUpdateItem"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:parentActivityName=".KitchenItemList" />
+        <activity
+            android:name=".KitchenAddItem"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:label="Add Item"
+            android:parentActivityName=".KitchenItemList" />
+        <activity
+            android:name=".KitchenItemList"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:label="Bayview Hotel Kitchen&apos;s Item List"
+            android:parentActivityName=".KitchenItemList"/>
 
-        <activity android:name=".ForgotPassword">
+        <activity android:name=".KitchenPortal"
+            android:label="Bayview Hotel Kitchen">
             android:screenOrientation="portrait"
         </activity>
-
         <activity android:name=".PortalActivity" />
-            android:screenOrientation="portrait"
         <activity
             android:name=".RegisterUsers"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
