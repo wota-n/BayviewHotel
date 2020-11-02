@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,12 +21,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
-public class PortalActivity extends AppCompatActivity {
+public class PortalActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button logout;
 
     private FirebaseUser user;
     private DatabaseReference reference;
+    private ImageView staffImage;
 
     private String userID;
 
@@ -34,6 +36,8 @@ public class PortalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portal);
 
+
+        // Add Logout button
         logout = (Button) findViewById(R.id.logout);
 
         logout.setOnClickListener(new View.OnClickListener(){
@@ -45,6 +49,7 @@ public class PortalActivity extends AppCompatActivity {
             }
         });
 
+        // Display current logged in user
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
@@ -68,5 +73,35 @@ public class PortalActivity extends AppCompatActivity {
                 Toast.makeText(PortalActivity.this, "Something wrong happened", Toast.LENGTH_LONG).show();
             }
         });
+
+        // Image view as navigation. Declare variables here
+
+        staffImage = (ImageView) findViewById(R.id.staffImage);
+        staffImage.setOnClickListener(this);
+
+        // housekeepingImage = (ImageView) findViewById(R.id.housekeepingImage);
+        //housekeepingImage.setOnClickListener(this);
+
+        // kitchenImage = (ImageView) findViewById(R.id.kitchenImage);
+        //kitchenImage.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.staffImage:
+                startActivity(new Intent(this, RegisterUsers.class));
+                break;
+
+            case R.id.housekeepingImage:
+                //startActivity(new Intent(this, <ActivityNameHere>.class));
+                //example: startActivity(new Intent(this, HousekeepingActivity.class));
+                break;
+
+            case R.id.kitchenImage:
+                //startActivity(new Intent(this, <ActivityNameHere>.class));
+                //example: startActivity(new Intent(this, KitchenActivity.class));
+                break;
+        }
     }
 }
