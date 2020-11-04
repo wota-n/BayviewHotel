@@ -27,7 +27,7 @@ public class PortalActivity extends AppCompatActivity implements View.OnClickLis
 
     private FirebaseUser user;
     private DatabaseReference reference;
-    private ImageView staffImage, kitchenImage;
+    private ImageView staffImage, kitchenImage, housekeepingImage;
 
     private String userID;
 
@@ -79,8 +79,8 @@ public class PortalActivity extends AppCompatActivity implements View.OnClickLis
         staffImage = (ImageView) findViewById(R.id.staffImage);
         staffImage.setOnClickListener(this);
 
-        // housekeepingImage = (ImageView) findViewById(R.id.housekeepingImage);
-        //housekeepingImage.setOnClickListener(this);
+        housekeepingImage = (ImageView) findViewById(R.id.housekeepingImage);
+        housekeepingImage.setOnClickListener(this);
 
         kitchenImage = (ImageView) findViewById(R.id.kitchenImage);
         kitchenImage.setOnClickListener(this);
@@ -96,6 +96,7 @@ public class PortalActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.housekeepingImage:
                 //startActivity(new Intent(this, <ActivityNameHere>.class));
                 //example: startActivity(new Intent(this, HousekeepingActivity.class));
+                startActivity(new Intent(this, HousekeepingPortal.class));
                 break;
 
             case R.id.kitchenImage:

@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterUsers extends AppCompatActivity implements View.OnClickListener{
@@ -122,13 +123,18 @@ public class RegisterUsers extends AppCompatActivity implements View.OnClickList
                                     Toast.makeText(RegisterUsers.this, "User has registered successfully!", Toast.LENGTH_LONG).show();
                                     progressBar.setVisibility(View.GONE);
                                 }else{
-                                    Toast.makeText(RegisterUsers.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(RegisterUsers.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                                    FirebaseAuthException e = (FirebaseAuthException )task.getException();
+                                    Toast.makeText(RegisterUsers.this, "Failed Registration: "+e.getMessage(), Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.GONE);
+                                    //code snippet from https://stackoverflow.com/questions/40572316/firebase-code-not-creating-new-user Frank Von Puffelen
                                 }
                             }
                         });
                     } else{
-                        Toast.makeText(RegisterUsers.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(RegisterUsers.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                        FirebaseAuthException e = (FirebaseAuthException )task.getException();
+                        Toast.makeText(RegisterUsers.this, "Failed Registration: "+e.getMessage(), Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
                     }
                 }
