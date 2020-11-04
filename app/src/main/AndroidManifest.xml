@@ -25,9 +25,33 @@
             android:label="Bayview Hotel Kitchen&apos;s Item List"
             android:parentActivityName=".KitchenItemList"/>
 
+        <activity
+            android:name=".HousekeepingRoomList"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:parentActivityName=".HousekeepingRoomList" />
+        <activity
+            android:name=".HousekeepingAssign"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:label="Assign Staff"
+            android:parentActivityName=".HousekeepingAssign"/>
+        <activity
+            android:name=".HousekeepingAd"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:label="Bayview Hotel Expand"
+            android:parentActivityName=".HousekeepingAd"/>
+        <activity
+            android:name=".HousekeepingUpdate"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+            android:label="Bayview Hotel Expand"
+            android:parentActivityName=".HousekeepingUpdate"/>
+
+        <activity android:name=".HousekeepingPortal"
+            android:label="Bayview Hotel Housekeeping"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".KitchenPortal"
-            android:label="Bayview Hotel Kitchen">
-            android:screenOrientation="portrait"
+            android:label="Bayview Hotel Kitchen"
+            android:screenOrientation="portrait">
         </activity>
         <activity android:name=".PortalActivity" />
         <activity
