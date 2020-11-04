@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".HousekeepingAd">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="411dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="68dp"
+        android:background="@color/colorLightBlue"
+        android:gravity="center"
+        android:text="Housekeeping: Expand Hotel"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="411dp"
+        android:layout_height="68dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:text="Welcome To Bayview Hotel"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="170dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginRight="170dp"
+        android:textColor="#ffff"
+        android:backgroundTint="@color/colorAccent"
+        android:background="@drawable/custom_rounded_corners"
+        android:textSize="20sp"
+        android:text="Add"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="300dp"
+        android:text="Room Type:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="350dp"
+        android:text="Status:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="364dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="400dp"
+        android:text="Staff:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="364dp" />
+
+    <EditText
+        android:id="@+id/type_input"
+        android:layout_width="191dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="290dp"
+        android:hint="Enter Type"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="254dp"/>
+
+    <EditText
+        android:id="@+id/status_input"
+        android:layout_width="191dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="340dp"
+        android:hint="Enter Status"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="353dp"/>
+
+    <EditText
+        android:id="@+id/staff_input"
+        android:layout_width="191dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="390dp"
+        android:hint="Enter Staff"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="353dp"/>
+</RelativeLayout>
